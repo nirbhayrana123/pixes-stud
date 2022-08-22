@@ -1,0 +1,64 @@
+<!DOCOTYE html>
+<html>
+<head> 
+ <title>Tab</title>
+ <link rel="stylesheet" href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body> 
+
+ 
+ <div class="main">
+ 
+  <ul class="tabs">
+	  <li><a href="#panel1">active 1</a></li>
+	  <li><a href="#panel2">active 2</a></li>
+	  <li><a href="#panel3">active 3</a></li> 
+  </ul>
+
+<div class="panelContainer"> 
+    <div id="panel1" class="panel">
+      <img src="images/1.jpg"> 
+	  <h1>Page-1</h1>
+    </div>  
+ 
+	<div id="panel2" class="panel">
+	 <img src="images/2.jpg">    
+	 <h1>Page-2</h1>
+	</div> 
+
+
+	<div id="panel3" class="panel">
+	<img src="images/3.jpg"> 
+    <h1>Page-3</h1>	 
+	</div> 
+
+</div> 
+</div>
+ 
+	
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script>  
+
+$(document).ready(function() {
+  $('.tabs a').click(function(){
+  
+     $('.panel').hide();
+     $('.tabs a.active').removeClass('active');
+     $(this).addClass('active');
+     
+     var panel = $(this).attr('href');
+     $(panel).fadeIn(1000);
+     
+     return false;   
+    
+  });  
+     $('.tabs li:first a').click();
+});  
+
+
+</script>
+
+ 
+</body>
+</html>
